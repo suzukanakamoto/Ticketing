@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Book Tickets</title>
+</head>
+<body>
+    <header>
+        <h1>Book Your Tickets</h1>
+    </header>
+    <main>
+        <form action="booking_process.php" method="POST">
+            <label for="event">Select Event:</label>
+            <select id="event" name="event">
+                <option value="live_concert">Live Concert 2024</option>
+                <option value="art_exhibition">Art Exhibition 2024</option>
+            </select>
+            
+            <label for="quantity">Number of Tickets:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+            
+            <button type="submit">Proceed to Payment</button>
+        </form>
+    </main>
+</body>
+</html>
