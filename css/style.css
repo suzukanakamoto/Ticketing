@@ -256,9 +256,256 @@ form .btn:hover {
   margin: 10px 0;
 }
 
-/* Modal Styles */
+/* Modal Styling */
 .modal {
   display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* Centered */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Close Button */
+.close-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Title Styling */
+.modal-content h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+/* Image Styling */
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Ticket List */
+.modal-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.modal-content ul li {
+  background: #f4f4f4;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #555;
+  font-weight: bold;
+}
+
+/* Form Styling */
+form {
+  margin-top: 20px;
+}
+
+form label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+form select,
+form input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: block;
+}
+
+form button {
+  background-color: #b74b4b;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+  }
+
+  .modal-content h2 {
+    font-size: 1.5rem;
+  }
+
+  form button {
+    font-size: 0.9rem;
+  }
+}
+
+/* History Section */
+
+/* Search Bar */
+.filter-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#search-bar {
+  width: 80%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* History Cards */
+.payment-history-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.history-card {
+  background-color: white;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #ddd;
+  transform: translateY(30px);
+  opacity: 0;
+  animation: fadeIn 0.5s forwards ease-in-out;
+}
+
+.history-header {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.history-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.history-header .date {
+  margin: 5px 0 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.history-body {
+  padding: 15px;
+}
+
+.history-body p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.history-body .btn-detail,
+.history-body .btn-delete {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn-detail {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-detail:hover {
+  background-color: #0056b3;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #a71d2a;
+}
+
+/* Status Styling */
+.status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.status.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status.canceled {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -266,7 +513,7 @@ form .btn:hover {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
@@ -295,8 +542,14 @@ form .btn:hover {
   text-decoration: none;
 }
 
-.modal-content img {
-  border: 2px solid #ccc;
-  margin-bottom: 15px;
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
