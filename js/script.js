@@ -25,7 +25,7 @@ window.addEventListener("click", (event) => {
 const eventDetailsData = [
   {
     title: "Music Festival 2024",
-    image: "concert-banner.jpg",
+    image: "assets/image/LINKIN PARK.jpg",
     description: `
       Join us for an unforgettable evening of live music featuring top artists! 
       Experience the best sound and lighting for a perfect concert night.
@@ -34,7 +34,7 @@ const eventDetailsData = [
   },
   {
     title: "Tech Conference 2024",
-    image: "art-exhibition-banner.jpg",
+    image: "assets/image/ALICE.jpg",
     description: `
       Explore stunning artworks by talented artists from around the globe. 
       A perfect event for art enthusiasts and collectors alike.
@@ -43,7 +43,7 @@ const eventDetailsData = [
   },
   {
     title: "Art Festival",
-    image: "tech-conference-banner.jpg",
+    image: "assets/image/AWESOME.jpg",
     description: `
       Dive into the future of technology at our annual tech conference. 
       Hear from industry leaders and explore cutting-edge innovations.
@@ -52,7 +52,7 @@ const eventDetailsData = [
   },
   {
     title: "Cooking Workshop",
-    image: "cooking-workshop-banner.jpg",
+    image: "assets/image/cooking.jpg",
     description: `
       Learn from top chefs in an interactive cooking workshop designed 
       for beginners and professionals alike.
@@ -61,7 +61,7 @@ const eventDetailsData = [
   },
   {
     title: "Photography Workshop",
-    image: "cooking-workshop-banner.jpg",
+    image: "assets/image/photography.jpg",
     description: `
       Learn from top chefs in an interactive cooking workshop designed 
       for beginners and professionals alike.
@@ -152,5 +152,47 @@ document.querySelectorAll(".btn-booking").forEach((button, index) => {
       </form>
     `;
     openModal(bookingFormContent);
+  });
+});
+
+// Modal functionality
+
+function openModal(content) {
+  modal.style.display = "block";
+  modalContent.innerHTML = content;
+}
+
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+// Search functionality
+const searchBar = document.querySelector("#search-bar");
+const historyCards = document.querySelectorAll(".history-card");
+
+searchBar.addEventListener("input", (event) => {
+  const searchQuery = event.target.value.toLowerCase();
+  historyCards.forEach((card) => {
+    const eventName = card.getAttribute("data-event").toLowerCase();
+    card.style.display = eventName.includes(searchQuery) ? "block" : "none";
+  });
+});
+
+// Add interactivity to buttons
+document.querySelectorAll(".btn-detail").forEach((button) => {
+  button.addEventListener("click", () => {
+    openModal("<h2>Transaction Details</h2><p>More details about this transaction...</p>");
+  });
+});
+
+document.querySelectorAll(".btn-delete").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.target.closest(".history-card").remove();
   });
 });
