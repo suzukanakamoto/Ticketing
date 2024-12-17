@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>History</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Eventify</a>
+        <nav>
+            <a href="index.html" class="home">
+              <i class="fa-solid fa-home"></i></a>
+
+            <a href="events.html" class="event">
+              <i class="fa-solid fa-ticket"></i></a>
+
+            <a href="history.html" class="active" class="shopping-cart">
+              <i class="fa-solid fa-shopping-cart"></i></a>
+            
+              <a href="profile.html" class="profile-icon">
+                <i class="fa-solid fa-user-circle"></i>
+            </a>
+
+        </nav>
+    </header>
+
+ <main class="payment-history-container">
+    <!-- Search Bar -->
+    <div class="filter-container">
+      <input type="text" id="search-bar" placeholder="Search by event name..." />
+    </div>
+
+    <!-- History Cards -->
+    <section class="history-card" data-event="Music Concert">
+      <div class="history-header">
+        <h2>Music Concert</h2>
+        <p class="date">Date: Dec 18, 2024</p>
+      </div>
+      <div class="history-body">
+        <p>Ticket Type: VIP</p>
+        <p>Quantity: 2</p>
+        <p>Total Amount: $300</p>
+        <p>Status: <span class="status success">Successful</span></p>
+        <button class="btn-detail">View Details</button>
+        <button class="btn-delete">Delete</button>
+      </div>
+    </section>
+
+    <section class="history-card" data-event="Art Exhibition">
+      <div class="history-header">
+        <h2>Art Exhibition</h2>
+        <p class="date">Date: Nov 25, 2024</p>
+      </div>
+      <div class="history-body">
+        <p>Ticket Type: Student</p>
+        <p>Quantity: 1</p>
+        <p>Total Amount: $10</p>
+        <p>Status: <span class="status pending">Pending</span></p>
+        <button class="btn-detail">View Details</button>
+        <button class="btn-delete">Delete</button>
+      </div>
+    </section>
+    
+    <!-- More cards can be added here -->
+  </main>
+
+  <!-- Modal for Details -->
+  <div class="modal">
+    <div class="modal-content">
+      <!-- Modal content will be dynamically injected -->
+    </div>
+    <span class="close-modal">&times;</span>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
